@@ -11,7 +11,7 @@ const App = () => {
 
   const addToCart = (shoe) => {
     setCart([...cart, shoe]);
-    alert(`${shoe.name} a été ajouté au panier !`);
+    alert(`${shoe.name} added to your cart !`);
   };
 
   return (

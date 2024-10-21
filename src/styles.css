@@ -130,7 +130,7 @@ header {
     border-radius: 4px;
 }
 
-.remove:hover {
+.remove {
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 5px 10px;
@@ -140,7 +140,7 @@ header {
     cursor: pointer;
 }
 
-.remove:hover:hover {
+.remove:hover {
     background-color: #5e0000;
     color: #ffcc00;
     border-radius: 4px;

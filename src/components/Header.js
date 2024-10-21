@@ -5,11 +5,11 @@ const Header = () => {
   return (
     <header className='header'>
       <div className='header-content'>
-        <div className='title'>E-commerce</div>
+        <div className='title'>Adadas</div>
         <nav>
           <ul className='navList'>
-            <li><Link to="/">Catalogue</Link></li>
-            <li><Link to="/cart">Panier</Link></li>
+            <li><Link to="/">Our Products</Link></li>
+            <li><Link to="/cart">Cart</Link></li>
           </ul>
         </nav>
       </div>
