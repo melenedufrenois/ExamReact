@@ -16,15 +16,15 @@ const Home = () => {
   return (
     <div>
       <h1>Liste des Chaussures</h1>
-      <div style={styles.shoeGrid}>
+      <div className='shoeGrid'>
         {shoes.length > 0 ? (
           shoes.map((shoe, index) => (
-            <div key={index} style={styles.card}>
-              <img src={defaultImage} alt={shoe.name} style={styles.image} /> {/* Affichage de l'image par défaut */}
+            <div key={index} className='card'>
+              <img src={defaultImage} alt={shoe.name} className='image' /> {/* Affichage de l'image par défaut */}
               <h2>{shoe.name}</h2>
               <p>Prix : {shoe.price} €</p>
               <p>Couleur : {shoe.color}</p>
-              <Link to={`/shoe/${index}`} style={styles.link}>Voir Détails</Link>
+              <Link to={`/shoe/${index}`} className='link'>Voir Détails</Link>
             </div>
           ))
         ) : (
@@ -33,30 +33,6 @@ const Home = () => {
       </div>
     </div>
   );
-};
-
-const styles = {
-  shoeGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '20px',
-  },
-  card: {
-    border: '1px solid #ddd',
-    borderRadius: '8px',
-    padding: '20px',
-    textAlign: 'center',
-  },
-  image: {
-    width: '100%',
-    height: 'auto',
-    borderRadius: '8px',
-  },
-  link: {
-    textDecoration: 'none',
-    color: 'blue',
-    fontWeight: 'bold',
-  },
 };
 
 export default Home;
