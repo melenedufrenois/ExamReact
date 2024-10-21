@@ -140,6 +140,7 @@ header {
     text-decoration: none;
     color: rgb(56, 56, 133);
     font-size: small;
+    display: block;
 }
 
 .image-container {

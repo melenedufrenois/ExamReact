@@ -25,10 +25,10 @@ const Home = ({ addToCart }) => {
                 <h4>{shoe.name}</h4>
                 <p>{shoe.price},00 €</p>
                 <p>{shoe.gender === 'M' ? 'Homme' : shoe.gender === 'F' ? 'Femme' : 'Unisexe'}</p>
-                <p>{shoe.description.slice(0, 30)}{shoe.description.length > 30 ? '...' : ''}</p>
+                <p>{shoe.description.slice(0, 20)}{shoe.description.length > 20 ? '...' : ''}</p>
               </a>
+              <Link to={`/shoe/${index}`} className='link'>Voir Détails</Link>
               <button className='addCart' onClick={() => addToCart(shoe)}>Ajouter au Panier</button>
-              <Link to={`/shoe/${index}`} className='link'>Voir Détails ></Link>
             </div>
           ))
         ) : (

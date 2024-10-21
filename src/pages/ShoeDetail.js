@@ -27,8 +27,8 @@ const ShoeDetail = ({ addToCart }) => {
       </div>
       <h2>{shoe.price},00 €</h2>
       <button className='addCart' onClick={() => addToCart(shoe)}>Ajouter au Panier</button>
-      <p>{shoe.gender === 'M' ? 'Homme' : shoe.gender === 'F' ? 'Femme' : 'Unisexe'}</p>
-      <p>Couleur : {shoe.color}</p>
+      <p>Chaussures pour {shoe.gender === 'M' ? 'Homme' : shoe.gender === 'F' ? 'Femme' : 'Unisexe'}.</p>
+      <p>Couleur : {shoe.color}.</p>
       <p>{shoe.description}</p>
     </div>
   );
