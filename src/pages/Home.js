@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
-const Home = () => {
+const Home = ({ addToCart }) => {
   const [shoes, setShoes] = useState([]);
 
   useEffect(() => {
@@ -14,21 +13,22 @@ const Home = () => {
   const defaultImage = '/icone.webp';
 
   return (
-    <div>
-      <h1>Liste des Chaussures</h1>
+    <div className='content'>
+      <h2>Notre catalogue</h2>
       <div className='shoeGrid'>
         {shoes.length > 0 ? (
           shoes.map((shoe, index) => (
             <div key={index} className='card'>
-              <img src={defaultImage} alt={shoe.name} className='image' /> {/* Affichage de l'image par défaut */}
-              <h2>{shoe.name}</h2>
-              <p>Prix : {shoe.price} €</p>
-              <p>Couleur : {shoe.color}</p>
-              <Link to={`/shoe/${index}`} className='link'>Voir Détails</Link>
+              <a href={`/shoe/${index}`} style={{ textDecoration: 'none', color: 'inherit' }}>                <img src={defaultImage} alt={shoe.name} className='image' /> {/* Affichage de l'image par défaut */}
+                <h4>{shoe.name}</h4>
+                <p>{shoe.price},00 €</p>
+                <p>Couleur : {shoe.color}</p>
+              </a>
+              <button className='addCart' onClick={() => addToCart(shoe)}>Ajouter au Panier</button>
             </div>
           ))
         ) : (
-          <p>Aucune chaussure disponible.</p>
+          <p>Aucune chaussure n'est disponible pour le moment.</p>
         )}
       </div>
     </div>

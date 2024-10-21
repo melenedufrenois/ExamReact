@@ -1,49 +1,28 @@
-import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
-import Header from './components/Header';
-import Footer from './components/Footer';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import ShoeDetail from './pages/ShoeDetail';
-import Cart from './pages/Cart';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: (
-      <>
-        <Header />
-        <Home />
-        <Footer />
-      </>
-    ),
-  },
-  {
-    path: '/shoe/:id',
-    element: (
-      <>
-        <Header />
-        <ShoeDetail />
-        <Footer />
-      </>
-    ),
-  },
-  {
-    path: '/cart',
-    element: (
-      <>
-        <Header />
-        <Cart />
-        <Footer />
-      </>
-    ),
-  },
-]);
+const App = () => {
+  const [cart, setCart] = useState([]);
 
-function App() {
+  const addToCart = (shoe) => {
+    setCart([...cart, shoe]);
+    alert(`${shoe.name} a été ajouté au panier !`);
+  };
+
   return (
-    <RouterProvider router={router} />
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home addToCart={addToCart} />} />
+        <Route path="/shoe/:id" element={<ShoeDetail addToCart={addToCart} />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
-}
+};
 
 export default App;
