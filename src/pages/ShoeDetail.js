@@ -6,7 +6,7 @@ const ShoeDetail = () => {
   const [shoe, setShoe] = useState(null);
 
   useEffect(() => {
-    fetch('/shoes')
+    fetch('/shoes.json')
       .then((res) => res.json())
       .then((data) => setShoe(data[id]))
       .catch((error) => console.error('Erreur de chargement des détails', error));

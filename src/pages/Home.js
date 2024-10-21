@@ -5,7 +5,7 @@ const Home = () => {
   const [shoes, setShoes] = useState([]);
 
   useEffect(() => {
-    fetch('/shoes')
+    fetch('/shoes.json')
       .then((res) => res.json())
       .then((data) => setShoes(data))
       .catch((error) => console.error('Erreur de chargement des chaussures', error));
