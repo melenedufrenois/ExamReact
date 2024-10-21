@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import ShoeDetail from './pages/ShoeDetail';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Cart from './pages/Cart';
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -19,6 +20,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home addToCart={addToCart} />} />
         <Route path="/shoe/:id" element={<ShoeDetail addToCart={addToCart} />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer />
     </Router>

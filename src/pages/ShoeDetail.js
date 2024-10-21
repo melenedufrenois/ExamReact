@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { useCart } from '../CartContext';
 
-const ShoeDetail = ({ addToCart }) => {
+const ShoeDetail = () => {
   const { id } = useParams();
   const [shoe, setShoe] = useState(null);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     fetch('/shoes.json')
