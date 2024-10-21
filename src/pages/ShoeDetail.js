@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const ShoeDetail = ({ addToCart }) => {
   const { id } = useParams();
@@ -20,6 +20,7 @@ const ShoeDetail = ({ addToCart }) => {
 
   return (
     <div className='content'>
+      <Link to={`/`} className='link'>Retour accueil</Link>
       <h1>{shoe.name}</h1>
       <div className="image-container">
         <img src={defaultImage} alt={shoe.name} className="main-image" />

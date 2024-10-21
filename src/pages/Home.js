@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = ({ addToCart }) => {
   const [shoes, setShoes] = useState([]);
@@ -19,12 +20,15 @@ const Home = ({ addToCart }) => {
         {shoes.length > 0 ? (
           shoes.map((shoe, index) => (
             <div key={index} className='card'>
-              <a href={`/shoe/${index}`} style={{ textDecoration: 'none', color: 'inherit' }}>                <img src={defaultImage} alt={shoe.name} className='image' /> {/* Affichage de l'image par défaut */}
+              <a href={`/shoe/${index}`} style={{ textDecoration: 'none', color: 'inherit' }}>                
+                <img src={defaultImage} alt={shoe.name} className='image' />
                 <h4>{shoe.name}</h4>
                 <p>{shoe.price},00 €</p>
-                <p>Couleur : {shoe.color}</p>
+                <p>{shoe.gender === 'M' ? 'Homme' : shoe.gender === 'F' ? 'Femme' : 'Unisexe'}</p>
+                <p>{shoe.description.slice(0, 30)}{shoe.description.length > 30 ? '...' : ''}</p>
               </a>
               <button className='addCart' onClick={() => addToCart(shoe)}>Ajouter au Panier</button>
+              <Link to={`/shoe/${index}`} className='link'>Voir Détails ></Link>
             </div>
           ))
         ) : (

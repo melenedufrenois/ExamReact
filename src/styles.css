@@ -95,9 +95,9 @@ header {
 }
 
 .navList a:hover {
-    background-color: #555; /* Couleur de fond sur hover */
-    color: #ffcc00; /* Couleur du texte sur hover */
-    border-radius: 4px; /* Ajoute des coins arrondis */
+    background-color: #555;
+    color: #ffcc00;
+    border-radius: 4px;
 }
 
 .shoeGrid {
@@ -116,14 +116,15 @@ header {
 
 .addCart {
     margin-top: 10px;
-    padding: 10px 15px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
     background-color: #000000;
     color: #ffffff;
     border-radius: 4px;
     cursor: pointer;
 }
 
-.addCart:hover {
+.button:hover {
     background-color: #555;
     color: #ffcc00;
     border-radius: 4px;
@@ -137,17 +138,8 @@ header {
 
 .link {
     text-decoration: none;
-    color: blue;
-    font-weight: bold;
-}
-
-.button {
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: #333;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
+    color: rgb(56, 56, 133);
+    font-size: small;
 }
 
 .image-container {

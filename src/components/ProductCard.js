@@ -7,7 +7,6 @@ const ProductCard = ({ product }) => {
       <p>Prix: {product.price} €</p>
       <p>Couleur: {product.color}</p>
       <p>{product.description}</p>
-      {/* Bouton pour afficher les détails du produit */}
       <button className='button'>Voir Détails</button>
     </div>
   );
